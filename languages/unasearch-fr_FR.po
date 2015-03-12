@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Unasearch\n"
-"POT-Creation-Date: 2015-03-09 14:04+0100\n"
-"PO-Revision-Date: 2015-03-09 14:04+0100\n"
+"POT-Creation-Date: 2015-03-12 15:40+0100\n"
+"PO-Revision-Date: 2015-03-12 15:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: Unacode <contact@unacode.com>\n"
 "Language: fr_FR\n"
@@ -16,26 +16,127 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-unasearch-admin.php:111 admin/class-unasearch-admin.php:112
+#: includes/class-unasearch-settings.php:43
+#: includes/class-unasearch-settings.php:44
 msgid "Unasearch"
 msgstr "Unasearch"
 
-#: admin/class-unasearch-admin.php:120 admin/class-unasearch-admin.php:121
-#: admin/class-unasearch-admin.php:155 admin/class-unasearch-admin.php:175
+#: includes/class-unasearch-settings.php:52
+#: includes/class-unasearch-settings.php:53
+#: includes/class-unasearch-settings.php:70
+#: includes/class-unasearch-settings.php:90
 msgid "General settings"
 msgstr "Options générales"
 
-#: admin/class-unasearch-admin.php:140
-msgid "Settings"
-msgstr "Options"
-
-#: admin/class-unasearch-admin.php:182
+#: includes/class-unasearch-settings.php:97
 msgid "Post type(s)"
 msgstr "Type(s) de contenu"
 
-#: admin/class-unasearch-admin.php:227
-msgid "Check the post types to include in the search :"
-msgstr "Cochez les types de contenu à inclure dans la recherche :"
+#: includes/class-unasearch-settings.php:105
+msgid "Order by"
+msgstr "Classé par"
+
+#: includes/class-unasearch-settings.php:113
+msgid "Order"
+msgstr "Ordre"
+
+#: includes/class-unasearch-settings.php:121
+msgid "Post status"
+msgstr "Statut"
+
+#: includes/class-unasearch-settings.php:169
+msgid "No order"
+msgstr "Pas de classement"
+
+#: includes/class-unasearch-settings.php:170
+msgid "By post id"
+msgstr "Par ID"
+
+#: includes/class-unasearch-settings.php:171
+msgid "By author"
+msgstr "Par auteur"
+
+#: includes/class-unasearch-settings.php:172
+msgid "By title"
+msgstr "Par titre"
+
+#: includes/class-unasearch-settings.php:173
+msgid "By post name (post slug)"
+msgstr "Par nom (slug)"
+
+#: includes/class-unasearch-settings.php:174
+msgid "By post type"
+msgstr "Par type de contenu"
+
+#: includes/class-unasearch-settings.php:175
+msgid "By date"
+msgstr "Par date"
+
+#: includes/class-unasearch-settings.php:176
+msgid "By last modified date"
+msgstr "Par la date de modification"
+
+#: includes/class-unasearch-settings.php:177
+msgid "By parent id"
+msgstr "Par ID du parent"
+
+#: includes/class-unasearch-settings.php:178
+msgid "Random order"
+msgstr "Ordre aléatoire"
+
+#: includes/class-unasearch-settings.php:179
+msgid "By number of comments"
+msgstr "Par nombre de commentaires"
+
+#: includes/class-unasearch-settings.php:180
+msgid "By menu order"
+msgstr "Par ordre du menu"
+
+#: includes/class-unasearch-settings.php:211
+msgid "Ascending order (from lowest to highest values)"
+msgstr "Ordre ascendant (du plus petit au plus grand)"
+
+#: includes/class-unasearch-settings.php:212
+msgid "Descending order (from highest to lowest values)"
+msgstr "Ordre descendant (du plus grand au plus petit)"
+
+#: includes/class-unasearch-settings.php:244
+msgid "Publish"
+msgstr "Publié"
+
+#: includes/class-unasearch-settings.php:245
+msgid "Pending review"
+msgstr "En attente de relecture"
+
+#: includes/class-unasearch-settings.php:246
+msgid "Draft"
+msgstr "Brouillon"
+
+#: includes/class-unasearch-settings.php:247
+msgid "Auto-draft"
+msgstr "Brouillon automatique"
+
+#: includes/class-unasearch-settings.php:248
+msgid "Future"
+msgstr "Publication future"
+
+#: includes/class-unasearch-settings.php:249
+msgid "Private"
+msgstr "Privé"
+
+#: includes/class-unasearch-settings.php:250
+msgid "Revision"
+msgstr "Révision"
+
+#: includes/class-unasearch-settings.php:251
+msgid "Trash"
+msgstr "Poubelle"
+
+#~ msgid "Settings"
+#~ msgstr "Options"
+
+#~ msgid "Check the post types to include in the search :"
+#~ msgstr "Cochez les types de contenu à inclure dans la recherche :"
 
 #~ msgid "The callback function used for <strong>%s</strong> setting is missing."
 #~ msgstr "La fonction utilisée pour l'option <strong>%s</strong> est manquante."

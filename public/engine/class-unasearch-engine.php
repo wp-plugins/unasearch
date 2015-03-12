@@ -38,12 +38,14 @@ class Unasearch_Engine {
 
     if ( !is_admin() && $query->is_main_query() && $query->is_search ) {
 
+      // Choose post types
       $post_types = $this->get_includes_post_types();
       
       if ( ($post_types != false) && is_array($post_types) ) {
         $query->set('post_type', $post_types);
       }
 
+      // Choose orderby
       $orderby = $this->get_orderby();
       
       if ( ($orderby != false) ) {
@@ -51,6 +53,20 @@ class Unasearch_Engine {
         $query->set('orderby', $orderby );
       }
 
+      // Choose order
+      $order = $this->get_order();
+      
+      if ( ($order != false) ) {
+
+        $query->set('order', $order );
+      }
+
+      // Choose post status
+      $post_status = $this->get_post_status();
+      
+      if ( ($post_status != false) && is_array($post_status) ) {
+        $query->set('post_status', $post_status);
+      }
     }
 
     return $query;
@@ -92,7 +108,40 @@ class Unasearch_Engine {
     } else {
       return false;
     }
+  }
 
+  /**
+   * Get the order to alter the search
+   *
+   * @since    0.1.0
+   */
+  private function get_order() {
+    $options = get_option('unasearch_settings');
+
+    if( is_array($options) && array_key_exists('order', $options) && (trim($options['order']) != '' ) ){
+      return $options['order'];
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Get all post status to include in search
+   *
+   * @since    0.1.0
+   */
+  private function get_post_status() {
+    $return = array();
+    $options = get_option('unasearch_settings');
+
+    if( is_array($options) && array_key_exists('post_status', $options) && is_array($options['post_status']) ){
+
+      foreach ( $options['post_status'] as $k => $v ) { 
+        $return[] = $v;      
+      }
+    }
+
+    return $return;
   }
 
 }

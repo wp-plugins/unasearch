@@ -16,7 +16,7 @@
  * Plugin Name:       Unasearch
  * Plugin URI:        http://unacode.com/unasearch/
  * Description:       Unasearch is a powerful plugin for improving content search on Wordpress
- * Version:           0.2.0
+ * Version:           0.3.0
  * Author:            Unacode <vincent@unacode.com>
  * Author URI:        http://unacode.com/
  * License:           GPL-2.0+

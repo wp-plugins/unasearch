@@ -107,6 +107,23 @@ class Unasearch_Settings {
 	    'display_unasearch_admin_page_settings',
 	    'general_settings_section'
 	  );
+
+	  add_settings_field( 
+	    'unasearch_settings_order',
+	    __( 'Order', $this->plugin_name ),
+	    array( $this, 'settings_order_callback'),
+	    'display_unasearch_admin_page_settings',
+	    'general_settings_section'
+	  );
+
+	  add_settings_field( 
+	    'unasearch_settings_post_status',
+	    __( 'Post status', $this->plugin_name ),
+	    array( $this, 'settings_post_status_callback'),
+	    'display_unasearch_admin_page_settings',
+	    'general_settings_section'
+	  );
+
 	  
 	}
 
@@ -173,11 +190,80 @@ class Unasearch_Settings {
 		    	} else {
 		    		$selected = '';
 		    	}
-		      	$html .= '<option '.$selected.' type="checkbox" value="'.$k.'" />'.$v.'</option>';			    
+		      	$html .= '<option '.$selected.' value="'.$k.'" />'.$v.'</option>';			    
 		    }
 
 		    $html .= '</select>';
 		}
+
+    echo $html;
+	}
+
+	/**
+	 * Callback for order
+	 *
+	 * @since    0.1.0
+	 */
+	function settings_order_callback() {
+		$options = get_option('unasearch_settings');
+    	$html       = '';		
+		$order = array(
+			'ASC'  => __( 'Ascending order (from lowest to highest values)', $this->plugin_name ),
+			'DESC' => __( 'Descending order (from highest to lowest values)', $this->plugin_name )
+		); 
+
+		if( is_array($order) && count($order) > 0 ){
+			$html .= '<select id="'.$this->plugin_name.'_order" name="'.$this->plugin_name.'_settings[order]">';
+
+		    foreach ( $order as $k => $v ) {	
+		    
+		    	if( is_array($options) && array_key_exists('order', $options) && ($k == $options['order']) ){
+		    		$selected = 'selected="selected"';
+		    	} else {
+		    		$selected = '';
+		    	}
+		      	$html .= '<option '.$selected.' value="'.$k.'" />'.$v.'</option>';			    
+		    }
+
+		    $html .= '</select>';
+		}
+
+    echo $html;
+	}
+
+	/**
+	 * Callback for post status checkboxes
+	 *
+	 * @since    0.1.0
+	 */
+	function settings_post_status_callback() {
+		$options = get_option('unasearch_settings');
+    $html       = '';		
+
+		$post_status = array(
+			'publish'  => __( 'Publish', $this->plugin_name ),
+			'pending'  => __( 'Pending review', $this->plugin_name ),
+			'draft'  => __( 'Draft', $this->plugin_name ),
+			'auto-draft'  => __( 'Auto-draft', $this->plugin_name ),
+			'future'  => __( 'Future', $this->plugin_name ),
+			'private'  => __( 'Private', $this->plugin_name ),
+			'inherit'  => __( 'Revision', $this->plugin_name ),
+			'trash'  => __( 'Trash', $this->plugin_name )
+		); 
+
+		if( is_array($post_status) && count($post_status) > 0 ){
+	    foreach ( $post_status as $k => $v ) {	
+	    
+	    	if( is_array($options) && array_key_exists('post_status', $options) && array_key_exists($k, $options['post_status']) ){
+	    		$checked = 'checked="checked"';
+	    	} else {
+	    		$checked = '';
+	    	}
+	      $html .= '<input '.$checked.' type="checkbox" id="'.$this->plugin_name.'_'.$k.'" name="'.$this->plugin_name.'_settings[post_status]['.$k.']" value="'.$k.'" />';
+	      $html .= '<label for="'.$this->plugin_name.'_'.$k.'">'.$v.'</label><br/>';
+	    
+	    }
+	  }
 
     echo $html;
 	}
@@ -188,9 +274,7 @@ class Unasearch_Settings {
 	 * @since    0.1.0
 	 */
 	function settings_general_options_callback() {
-
-	  echo '<p>' . __( 'Check the post types to include in the search :', $this->plugin_name ) . '</p>';
-
+		//
 	}
 
 	/**
