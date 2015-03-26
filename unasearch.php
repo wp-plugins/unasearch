@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -16,7 +15,7 @@
  * Plugin Name:       Unasearch
  * Plugin URI:        http://unacode.com/unasearch/
  * Description:       Unasearch is a powerful plugin for improving content search on Wordpress
- * Version:           0.3.0
+ * Version:           0.4.0
  * Author:            Unacode <vincent@unacode.com>
  * Author URI:        http://unacode.com/
  * License:           GPL-2.0+
@@ -36,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function activate_unasearch() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-unasearch-activator.php';
-	Unasearch_Activator::activate();
+  $activate = new Unasearch_Activator();
 }
 
 /**

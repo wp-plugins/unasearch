@@ -3,7 +3,7 @@ Contributors: Unacode
 Tags: search, advanced
 Requires at least: 4.1
 Tested up to: 4.1.1
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ This section describes how to install the Unasearch plugin and get it working.
 Unfortunately not. Unasearch changes the Wordpress requests and other search plugin could conflict with this work. 
 
 == Changelog ==
+
+= 0.4.0 =
+* Feature : Search now based on a index engine
 
 = 0.3.0 =
 * Feature : Choose the order of the search query.

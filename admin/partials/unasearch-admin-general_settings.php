@@ -44,9 +44,9 @@
     ?>
   </h2>
 
-  <div id="poststuff">
+  <div>
 
-    <div id="post-body" class="metabox-holder">
+    <div id="post-body">
 
         <div id="postbox-container" class="postbox-container">
 

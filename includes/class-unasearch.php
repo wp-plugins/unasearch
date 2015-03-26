@@ -110,11 +110,15 @@ class Unasearch {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-unasearch-querybuilder.php';
+
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-unasearch-public.php';
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-unasearch-settings.php';
 
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/engine/class-unasearch-engine.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-unasearch-index.php';
+
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-unasearch-engine.php';
 
 
 		$this->loader = new Unasearch_Loader();
@@ -132,11 +136,20 @@ class Unasearch {
 
 		$plugin_admin = new Unasearch_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_name . '.php' );
+
+		$plugin_index = new Unasearch_Index( $this->get_plugin_name() );
+
+		// Launch index terms
+		if( isset( $_POST['index_terms'] ) ) {
+			$plugin_index->launch_index();
+		}
+
+		$this->loader->add_action( 'save_post', $plugin_index, 'launch_index' );
+
 	}
 
 	/**

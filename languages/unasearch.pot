@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Unasearch\n"
-"POT-Creation-Date: 2015-03-12 15:40+0100\n"
-"PO-Revision-Date: 2015-03-12 15:40+0100\n"
+"POT-Creation-Date: 2015-03-26 23:18+0100\n"
+"PO-Revision-Date: 2015-03-26 23:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: Unacode <contact@unacode.com>\n"
 "Language: en_EN\n"
@@ -24,110 +24,111 @@ msgstr ""
 #: includes/class-unasearch-settings.php:52
 #: includes/class-unasearch-settings.php:53
 #: includes/class-unasearch-settings.php:70
-#: includes/class-unasearch-settings.php:90
+#: includes/class-unasearch-settings.php:106
 msgid "General settings"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:97
-msgid "Post type(s)"
+#: includes/class-unasearch-settings.php:91
+msgid "Indexation"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:105
-msgid "Order by"
+#: includes/class-unasearch-settings.php:98
+#: includes/class-unasearch-settings.php:153
+msgid "Index terms"
 msgstr ""
 
 #: includes/class-unasearch-settings.php:113
-msgid "Order"
+msgid "Post type(s)"
 msgstr ""
 
 #: includes/class-unasearch-settings.php:121
+msgid "Order by"
+msgstr ""
+
+#: includes/class-unasearch-settings.php:129
+msgid "Order"
+msgstr ""
+
+#: includes/class-unasearch-settings.php:137
 msgid "Post status"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:169
-msgid "No order"
-msgstr ""
-
-#: includes/class-unasearch-settings.php:170
+#: includes/class-unasearch-settings.php:197
 msgid "By post id"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:171
+#: includes/class-unasearch-settings.php:198
 msgid "By author"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:172
+#: includes/class-unasearch-settings.php:199
 msgid "By title"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:173
+#: includes/class-unasearch-settings.php:200
 msgid "By post name (post slug)"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:174
+#: includes/class-unasearch-settings.php:201
 msgid "By post type"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:175
+#: includes/class-unasearch-settings.php:202
 msgid "By date"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:176
+#: includes/class-unasearch-settings.php:203
 msgid "By last modified date"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:177
+#: includes/class-unasearch-settings.php:204
 msgid "By parent id"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:178
-msgid "Random order"
-msgstr ""
-
-#: includes/class-unasearch-settings.php:179
+#: includes/class-unasearch-settings.php:205
 msgid "By number of comments"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:180
+#: includes/class-unasearch-settings.php:206
 msgid "By menu order"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:211
+#: includes/class-unasearch-settings.php:237
 msgid "Ascending order (from lowest to highest values)"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:212
+#: includes/class-unasearch-settings.php:238
 msgid "Descending order (from highest to lowest values)"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:244
+#: includes/class-unasearch-settings.php:270
 msgid "Publish"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:245
+#: includes/class-unasearch-settings.php:271
 msgid "Pending review"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:246
+#: includes/class-unasearch-settings.php:272
 msgid "Draft"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:247
+#: includes/class-unasearch-settings.php:273
 msgid "Auto-draft"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:248
+#: includes/class-unasearch-settings.php:274
 msgid "Future"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:249
+#: includes/class-unasearch-settings.php:275
 msgid "Private"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:250
+#: includes/class-unasearch-settings.php:276
 msgid "Revision"
 msgstr ""
 
-#: includes/class-unasearch-settings.php:251
+#: includes/class-unasearch-settings.php:277
 msgid "Trash"
 msgstr ""

@@ -85,6 +85,22 @@ class Unasearch_Settings {
 	 */
 	function add_settings_admin() {
 
+
+	  add_settings_section(
+	    'index_settings_section',
+	    __( 'Indexation', $this->plugin_name ),
+	    array( $this, 'settings_general_index_callback'),
+	    'display_unasearch_admin_page_settings'
+	  );
+	  
+	  add_settings_field( 
+	    'unasearch_settings_index',
+	    __( 'Index terms', $this->plugin_name ),
+	    array( $this, 'settings_index_callback'),
+	    'display_unasearch_admin_page_settings',
+	    'index_settings_section'
+	  );
+
 	  add_settings_section(
 	    'general_settings_section',
 	    __( 'General settings', $this->plugin_name ),
@@ -128,6 +144,18 @@ class Unasearch_Settings {
 	}
 
 	/**
+	 * Callback for index button
+	 *
+	 * @since    0.1.0
+	 */
+	function settings_index_callback() {
+		$html = '';
+		$html .= '<input type="submit" name="index_terms" id="index_terms" class="button button-primary" value="'.__('Index terms', $this->plugin_name).'">';
+
+    echo $html;
+	}
+
+	/**
 	 * Callback for post type checkboxes
 	 *
 	 * @since    0.1.0
@@ -166,18 +194,16 @@ class Unasearch_Settings {
 		$options = get_option('unasearch_settings');
     	$html       = '';		
 		$orderby = array(
-			'none'          => __( 'No order', $this->plugin_name ),
 			'ID'            => __( 'By post id', $this->plugin_name ),
-			'author'        => __( 'By author', $this->plugin_name ),
-			'title'         => __( 'By title', $this->plugin_name ),
-			'name'          => __( 'By post name (post slug)', $this->plugin_name ),
-			'type'          => __( 'By post type', $this->plugin_name ),
-			'date'          => __( 'By date', $this->plugin_name ),
-			'modified'      => __( 'By last modified date', $this->plugin_name ),
-			'parent'        => __( 'By parent id', $this->plugin_name ),
-			'rand'          => __( 'Random order', $this->plugin_name ),
+			'post_author'   => __( 'By author', $this->plugin_name ),
+			'post_title'    => __( 'By title', $this->plugin_name ),
+			'post_name'     => __( 'By post name (post slug)', $this->plugin_name ),
+			'post_type'     => __( 'By post type', $this->plugin_name ),
+			'post_date'     => __( 'By date', $this->plugin_name ),
+			'post_modified' => __( 'By last modified date', $this->plugin_name ),
+			'post_parent'   => __( 'By parent id', $this->plugin_name ),
 			'comment_count' => __( 'By number of comments', $this->plugin_name ),
-			'menu_order'    => __( 'By menu order', $this->plugin_name )
+			'menu_order'    => __( 'By menu order', $this->plugin_name ),
 		); 
 
 		if( is_array($orderby) && count($orderby) > 0 ){
@@ -252,9 +278,11 @@ class Unasearch_Settings {
 		); 
 
 		if( is_array($post_status) && count($post_status) > 0 ){
+
 	    foreach ( $post_status as $k => $v ) {	
-	    
+
 	    	if( is_array($options) && array_key_exists('post_status', $options) && array_key_exists($k, $options['post_status']) ){
+
 	    		$checked = 'checked="checked"';
 	    	} else {
 	    		$checked = '';
@@ -266,6 +294,15 @@ class Unasearch_Settings {
 	  }
 
     echo $html;
+	}
+
+	/**
+	 * Callback for display index option description
+	 *
+	 * @since    0.1.0
+	 */
+	function settings_general_index_callback() {
+		//
 	}
 
 	/**
